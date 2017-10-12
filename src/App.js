@@ -35,13 +35,13 @@ class App extends Component {
   }
 
   handleNextIteration(){
-    let updatedTableData = this.state.Knapsack.nextIteration(this.state.tableData);
-    this.setState({tableData : updatedTableData}, function(){
+    var t = Object.create(this.state.tableData);
+    this.setState({tableData : this.state.Knapsack.nextIteration(t)}, function(){
       console.log("Updated table value. Nice going!");
     });
     //this.state.tableData =
       //this.state.Knapsack.nextIteration(this.state.tableData);
-    console.log(updatedTableData);
+
   }
 
   render() {
