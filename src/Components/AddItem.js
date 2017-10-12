@@ -16,7 +16,7 @@ class AddItem extends Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.handleAddItem.bind(this)}>
+        <form ref="form" onSubmit={this.handleAddItem.bind(this)}>
           <div>
             <label>Add new item</label><br />
             <input type="text" ref="itemToAdd" />

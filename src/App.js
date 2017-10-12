@@ -10,22 +10,28 @@ class App extends Component {
     super();
     let Knapsack = new Implementation();
     this.state = {
-        tableData: [
-        {'1':1, '2':2, '3':3},
-        {'1':4, '2':5, '3':6}
-      ],
+        tableData: [     ],
         columnData: [
         {Header: 'Capacity 1', accessor: '1'},
         {Header: 'Capacity 2', accessor: '2'},
-        {Header: 'Capacity 3', accessor: '3'}
+        {Header: 'Capacity 3', accessor: '3'},
+        {Header: 'Capacity 4', accessor: '4'},
+        {Header: 'Capacity 5', accessor: '5'},
+        {Header: 'Capacity 6', accessor: '6'},
+        {Header: 'Capacity 7', accessor: '7'},
+        {Header: 'Capacity 8', accessor: '8'},
+        {Header: 'Capacity 9', accessor: '9'},
+        {Header: 'Capacity 10', accessor: '10'}
       ],
         currentItems: [ ],
-        Knapsack: Knapsack
+        Knapsack: Knapsack,
     }
   }
 
   handleSubmit(e){
-    this.state.Knapsack.initialSetup(this.state.currentItems);
+    var t = Object.create(this.state.tableData);
+    this.setState({tableData : this.state.Knapsack.initialSetup(this.state.currentItems)});
+
   }
 
   handleAddItem(item){
@@ -39,8 +45,7 @@ class App extends Component {
     this.setState({tableData : this.state.Knapsack.nextIteration(t)}, function(){
       console.log("Updated table value. Nice going!");
     });
-    //this.state.tableData =
-      //this.state.Knapsack.nextIteration(this.state.tableData);
+
 
   }
 

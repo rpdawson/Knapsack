@@ -16,8 +16,8 @@ class Table extends Component {
           key="ReactTable"
           data={this.props.tableData}
           columns={this.props.columnData}
-          //showPagination={false}
-          defaultPageSize={4}
+          showPagination={false}
+          defaultPageSize={5}
         /><br />
         <button onClick={this.handleNextIteration.bind(this)}> Next iteration </button>
       </div>
